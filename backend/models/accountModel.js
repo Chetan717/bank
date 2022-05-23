@@ -1,6 +1,14 @@
 const mongoose = require('mongoose')
 
-const accountSchema = mongoose.Schema({
+const accountSchema = mongoose.Schema(
+    {
+    
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
+
+    },
     name: {
         type: String,
         required: [true, 'Please fill the information'],

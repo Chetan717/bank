@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const { getAccounts, setAccount, updateAccount, deleteAccount } = require('../controllers/accountController')
+const { protect } = require('../middleware/authMiddleware')
 
 
-router.route('/').get(getAccounts).post(setAccount)
-router.route('/:id').put(updateAccount).delete(deleteAccount)
+router.route('/').get(protect, getAccounts).post(protect, setAccount)
+router.route('/:id').put(protect, updateAccount).delete(protect, deleteAccount)
 
 module.exports = router
