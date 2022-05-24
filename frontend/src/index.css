@@ -105,19 +105,47 @@ text-decoration: line-through rgb(157, 157, 167);
   font-size: 1rem;
 }
 
-.accounts {
+/* .accounts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-}
+} */
 
 .account {
-  background-color: #f4f4f4;
+  background-color: #d3ddde;
   margin: 10px 0;
-  padding: 20px 0 10px;
+  padding: 40px 0 40px;
+  border-radius: 10px;
   position: relative;
 }
 
+.account-input {
+  padding: 5px 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 25px;
+  font-family: inherit;
+}
+
+.account-title-2 {
+font-size: medium;
+}
+
+.balance-btn-1 {
+  margin-left: 5%;
+  padding: .5em 1em;
+  border: none;
+  background-color: #AD6588;
+  color: #fff;
+  border-radius: 20px;
+}
+.balance-btn-2 {
+  margin-left: 5%;
+  padding: .5em 1em;
+  border: none;
+  background-color: #6595ad;
+  color: #fff;
+  border-radius: 20px;
+}
 .account .close {
   position: absolute;
   top: 10px;

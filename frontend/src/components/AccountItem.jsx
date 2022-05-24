@@ -26,8 +26,8 @@ function AccountItem({ account }) {
   return (
     <div className="account">
       {/* <div>{new Date(account.createdAt).toLocaleString('en-US')}</div> */}
-      <h2>{account.name}</h2>
-      <h2>{account.amount} SEK</h2>
+      <h2 >{account.name}</h2>
+      <h2 className="account-title-2">{account.amount} SEK</h2>
       {/* <button
         onClick={() => dispatch(deleteAccount(account._id))}
         className="close"
@@ -35,13 +35,14 @@ function AccountItem({ account }) {
         X
       </button> */}
       <input
+      className="account-input"
         type="number"
         name="amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
-      <button onClick={withdraw}>Withdraw</button>
-      <button onClick={deposit}>Deposit</button>
+      <button className="balance-btn-1" onClick={withdraw}>Withdraw</button>
+      <button className="balance-btn-2" onClick={deposit}>Deposit</button>
 
       {errorDeposit && (
         <p>You can not withdraw more than what you have in your account</p>
