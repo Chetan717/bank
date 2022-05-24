@@ -57,11 +57,15 @@ const updateAccount = asyncHandler (async(req, res) => {
     }
 
 
+
     const updatedAccount = await Account.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
     })
     res.status(200).json(updatedAccount)
 })
+
+
+
 //Delete account
 
 
@@ -95,6 +99,37 @@ const deleteAccount = asyncHandler (async(req, res) => {
 })
 
 
+//balance account
+const balanceAccount = asyncHandler (async(req, res) => {
+
+     const account = await Account.findById(req.params.id)
+    
+    if(!account) {
+        res.status(400)
+        throw new Error('Account not found')
+    }
+
+    const user = await User.findById(req.user.id)
+
+    //Check for User
+    if(!user) {
+        res.status(401)
+        throw new Error('User not found')
+    }
+
+    //Make sure the logged in user matches the Account User 
+    if(global.user.toString() !== user.id) {
+        res.status(401)
+        throw new Error('User not authorized')
+    }
+
+    await account.amount = account.amount+req.newAmount
+
+    
+    res.status(200).json({ id: req.params.id})
+})
+
+
 
 
 module.exports = {
@@ -102,4 +137,5 @@ module.exports = {
     setAccount,
     updateAccount,
     deleteAccount,
+    balanceAccount,
 }
