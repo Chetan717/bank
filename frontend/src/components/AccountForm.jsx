@@ -3,28 +3,28 @@ import { useDispatch } from 'react-redux'
 import { createAccount } from '../features/accounts/accountSlice'
 
 function AccountForm() {
-  const [text, setText] = useState('')
+  const [name, setName] = useState('')
 
   const dispatch = useDispatch()
 
   const onSubmit = (e) => {
     e.preventDefault()
 
-    dispatch(createAccount({ text }))
-    setText('')
+    dispatch(createAccount({ name }))
+    setName('')
   }
 
   return (
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='text'>Account</label>
+          <label htmlFor='name'>Account</label>
           <input
             type='text'
-            name='text'
-            id='text'
-            value={text}
-            onChange={(e) => setText(e.target.value)}
+            name='name'
+            id='name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className='form-group'>

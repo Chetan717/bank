@@ -7,7 +7,7 @@ function AccountItem({ account }) {
   return (
     <div className='account'>
       <div>{new Date(account.createdAt).toLocaleString('en-US')}</div>
-      <h2>{account.text}</h2>
+      <h2>{account.name}</h2>
       <button onClick={() => dispatch(deleteAccount(account._id))} className='close'>
         X
       </button>
