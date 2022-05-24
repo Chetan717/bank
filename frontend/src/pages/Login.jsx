@@ -59,7 +59,7 @@ function Login() {
     <>
       <section className='heading'>
         <h1>
-          <FaSignInAlt /> Login
+          <FaSignInAlt /> 
         </h1>
         <p>Login and start setting accounts</p>
       </section>

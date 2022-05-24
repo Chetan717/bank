@@ -17,12 +17,12 @@ function Header() {
   return (
     <header className='header'>
       <div className='logo'>
-        <Link to='/'>AccountSetter</Link>
+        <Link className='logo-link' to='/'> <span>TRUSTEX</span> BANK</Link>
       </div>
       <ul>
         {user ? (
           <li>
-            <button className='btn' onClick={onLogout}>
+            <button className='btn logout-btn' onClick={onLogout}>
               <FaSignOutAlt /> Logout
             </button>
           </li>
