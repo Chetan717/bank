@@ -1,5 +1,6 @@
 
 const asyncHandler = require('express-async-handler')
+
 const Account = require('../models/accountModel')
 const User = require('../models/userModel')
 
@@ -69,7 +70,7 @@ const updateAccount = asyncHandler (async(req, res) => {
 //Delete account
 
 
-const deleteAccount = asyncHandler (async(req, res) => {
+const deleteAccount = asyncHandler (async (req, res) => {
 
      const account = await Account.findById(req.params.id)
     
@@ -81,13 +82,13 @@ const deleteAccount = asyncHandler (async(req, res) => {
     const user = await User.findById(req.user.id)
 
     //Check for User
-    if(!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
     //Make sure the logged in user matches the Account User 
-    if(global.user.toString() !== user.id) {
+    if (account.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     }
