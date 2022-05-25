@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
 
+
 function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -29,6 +30,8 @@ function Header() {
         ) : (
           <>
             <li>
+
+            
               <Link to='/login'>
                 <FaSignInAlt /> Login
               </Link>
@@ -38,6 +41,7 @@ function Header() {
                 <FaUser /> Register
               </Link>
             </li>
+            
           </>
         )}
       </ul>

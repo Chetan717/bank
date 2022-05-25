@@ -4,14 +4,14 @@ function withdraw(req, res) {
       .collection("accounts")
       .findOne({ currentToken: req.body.token }, (err, result) => {
         if (err) return res.status(400).send(`Error. Account not found.`);
-        const balance = result.balance;
-        if (amount > balance) return res.status(400).send(`Insufficient Funds`);
-        const newBalance = balance - amount;
+        const amount = result.amount;
+        if (amount > amount) return res.status(400).send(`Insufficient Funds`);
+        const newAmount = amount - amount;
         res.myDataClient
           .collection("accounts")
           .updateOne(
             { currentToken: req.body.token },
-            { $set: { balance: newBalance } }
+            { $set: { amount: newAmount } }
           );
   
         res.status(200).send(`

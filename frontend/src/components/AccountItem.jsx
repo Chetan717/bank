@@ -1,27 +1,29 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { balance } from "../features/accounts/accountSlice";
+import { balance,deposit,withdraw } from "../features/accounts/accountSlice";
 import { deleteAccount } from "../features/accounts/accountSlice";
+
 
 function AccountItem({ account }) {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState("");
   const [errorDeposit, setErrorDeposit] = useState("");
 
-  const withdraw = () => {
+  const withdrawHandler = () => {
     if (amount < account.amount) {
       const id = account._id;
       const newAmount = -Math.abs(amount);
-      dispatch(balance({ id, newAmount }));
+      dispatch(withdraw({ id, newAmount }));
       setErrorDeposit(false);
     } else {
       setErrorDeposit(true);
     }
   };
 
-  const deposit = () => {
+  const depositHandler = () => {
     const id = account._id;
-    dispatch(balance({ id, amount }));
+    // dispatch(balance({ id, amount }));
+    dispatch(deposit({ id, amount }));
   };
 
   return (
@@ -36,6 +38,7 @@ function AccountItem({ account }) {
       >
         X
       </button>
+      
       <input
       className="account-input"
         type="number"
@@ -43,8 +46,8 @@ function AccountItem({ account }) {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
-      <button className="balance-btn-1" onClick={withdraw}>Withdraw</button>
-      <button className="balance-btn-2" onClick={deposit}>Deposit</button>
+      <button className="balance-btn-1" onClick={withdrawHandler}>Withdraw</button>
+      <button className="balance-btn-2" onClick={depositHandler}>Deposit</button>
 
       {errorDeposit && (
         <p>You can not withdraw more than what you have in your account</p>

@@ -67,6 +67,44 @@ export const deleteAccount = createAsyncThunk(
   }
 );
 
+// deposit
+export const deposit = createAsyncThunk(
+  "accounts/deposit",
+  async (data, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await accountService.deposit(data, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+// withdraw
+export const withdraw = createAsyncThunk(
+  "accounts/withdraw",
+  async (data, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await accountService.withdraw(data, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 // Withdraw and deposit
 export const balance = createAsyncThunk(
   "accounts/balance",

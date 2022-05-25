@@ -54,11 +54,39 @@ const balance = async (data, token) => {
   return response.data;
 };
 
+// deposit 
+const deposit = async (data, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.post(API_URL+'deposit/' + data.id,data, config);
+
+  return response.data;
+};
+
+// withdraw 
+const withdraw = async (data, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.post(API_URL+'withdraw/' + data.id,data, config);
+
+  return response.data;
+};
+
 const accountService = {
   createAccount,
   getAccounts,
   deleteAccount,
-  balance
+  balance,
+  deposit,
+  withdraw
 };
 
 export default accountService;

@@ -10,7 +10,7 @@ const displayBalance = require("../controllers/displayBalance");
 router.route('/').get(protect, getAccounts).post(protect, setAccount)
 router.route('/:id').delete(protect, deleteAccount).put(protect, updateAccount)
 // router.route('/balance/:id').post(protect, balanceAccount)
-router.post("/deposit", deposit);
+router.post("/deposit/:id", deposit);
 router.post("/withdraw", withdraw);
 router.post("/balance", displayBalance);
 
