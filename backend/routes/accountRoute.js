@@ -6,6 +6,6 @@ const { protect } = require('../middleware/authMiddleware')
 
 router.route('/').get(protect, getAccounts).post(protect, setAccount)
 router.route('/:id').put(protect, updateAccount).delete(protect, deleteAccount)
-router.route('/balance/:id').post(protect, balanceAccount)
+// router.route('/balance/:id').post(protect, balanceAccount)
 
 module.exports = router

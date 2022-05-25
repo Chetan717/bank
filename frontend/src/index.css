@@ -126,8 +126,10 @@ text-decoration: line-through rgb(157, 157, 167);
   font-family: inherit;
 }
 
-.account-title-2 {
+.account-title-span {
 font-size: medium;
+margin-bottom: 10px;
+
 }
 
 .balance-btn-1 {
@@ -137,7 +139,12 @@ font-size: medium;
   background-color: #AD6588;
   color: #fff;
   border-radius: 20px;
+  transition: all ease;
 }
+.balance-btn-1:hover {
+  transform: scale(0.98);
+}
+
 .balance-btn-2 {
   margin-left: 5%;
   padding: .5em 1em;
@@ -145,6 +152,12 @@ font-size: medium;
   background-color: #6595ad;
   color: #fff;
   border-radius: 20px;
+  transition: all ease;
+
+}
+
+.balance-btn-2:hover {
+  transform: scale(0.98);
 }
 .account .close {
   position: absolute;

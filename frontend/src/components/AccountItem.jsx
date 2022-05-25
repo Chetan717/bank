@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { balance } from "../features/accounts/accountSlice";
+import { balance, deleteAccount } from "../features/accounts/accountSlice";
 
 function AccountItem({ account }) {
   const dispatch = useDispatch();
@@ -26,14 +26,14 @@ function AccountItem({ account }) {
   return (
     <div className="account">
       {/* <div>{new Date(account.createdAt).toLocaleString('en-US')}</div> */}
-      <h2 >{account.name}</h2>
-      <h2 className="account-title-2">{account.amount} SEK</h2>
-      {/* <button
+      <h2 >Account name: <span className="account-title-span">{account.name}</span></h2>
+      <h2 >Account balance: <span className="account-title-span">{account.amount} SEK </span></h2>
+      <button
         onClick={() => dispatch(deleteAccount(account._id))}
         className="close"
       >
         X
-      </button> */}
+      </button>
       <input
       className="account-input"
         type="number"

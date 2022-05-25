@@ -123,7 +123,7 @@ const balanceAccount = asyncHandler (async(req, res) => {
         throw new Error('User not authorized')
     }
 
-    await account.amount = account.amount+req.newAmount
+    // await account.amount = account.amount + req.newAmount
 
     
     res.status(200).json({ id: req.params.id})
