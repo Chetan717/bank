@@ -36,9 +36,9 @@ const deleteAccount = async (accountId, token) => {
     },
   };
 
-  const response = await axios.delete(API_URL + accountId, config);
+  const response = await axios.delete(API_URL + accountId, config)
 
-  return response.data;
+  return response.data
 };
 
 // balance user account

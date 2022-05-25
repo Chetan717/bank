@@ -129,7 +129,15 @@ text-decoration: line-through rgb(157, 157, 167);
 .account-title-span {
 font-size: medium;
 margin-bottom: 10px;
-
+}
+.account-id {
+font-size: medium;
+margin-bottom: 10px;
+color: rgb(116, 116, 116);
+}
+.account-id-2 {
+font-size: small;
+margin-bottom: 10px;
 }
 
 .balance-btn-1 {
