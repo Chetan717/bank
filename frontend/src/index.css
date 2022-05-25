@@ -201,6 +201,9 @@ margin-bottom: 10px;
   text-align: left;
   display: block;
   margin: 0 0 5px 3px;
+  font-weight: 100;
+  font-size: small;
+  color: #555;
 }
 
 .btn {

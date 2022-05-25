@@ -18,7 +18,7 @@ function AccountForm() {
     <section className="form">
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Account</label>
+          <label htmlFor="name">Account name</label>
           <input
             type="text"
             name="name"

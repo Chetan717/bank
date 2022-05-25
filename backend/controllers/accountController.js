@@ -125,6 +125,9 @@ const balanceAccount = asyncHandler (async(req, res) => {
     }
 
     // await account.amount = account.amount + req.newAmount
+   
+  const total = parseInt(account.amount) + parseInt(newAmount);
+
 
     
     res.status(200).json({ id: req.params.id})
