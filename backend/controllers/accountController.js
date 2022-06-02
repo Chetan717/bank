@@ -69,8 +69,6 @@ const updateAccount = asyncHandler (async(req, res) => {
 
 
 //Delete account
-
-
 const deleteAccount = asyncHandler (async (req, res) => {
 
      const account = await Account.findById(req.params.id)

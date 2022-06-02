@@ -77,7 +77,7 @@ const withdraw = async (data, token) => {
     },
   };
 
-  const response = await axios.post(API_URL+'withdraw/:id' + data.id,data, config);
+  const response = await axios.put(API_URL+ data.id,data, config);
 
   return response.data;
 };

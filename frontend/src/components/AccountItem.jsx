@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { balance,deposit,withdraw } from "../features/accounts/accountSlice";
+import { deposit,withdraw } from "../features/accounts/accountSlice";
 import { deleteAccount } from "../features/accounts/accountSlice";
 
 
@@ -9,20 +9,31 @@ function AccountItem({ account }) {
   const [amount, setAmount] = useState("");
   const [errorDeposit, setErrorDeposit] = useState("");
 
+  // const withdrawHandler = () => {
+  //   if (amount < account.amount) {
+  //     const id = account._id;
+  //     const newAmount = -Math.abs(amount);
+  //     dispatch(withdraw({ id, newAmount }));
+  //     setErrorDeposit(false);
+  //   } else {
+  //     setErrorDeposit(true);
+  //   }
+  // };
+
   const withdrawHandler = () => {
-    if (amount < account.amount) {
-      const id = account._id;
-      const newAmount = -Math.abs(amount);
-      dispatch(withdraw({ id, newAmount }));
-      setErrorDeposit(false);
+    if (amount < account.amount){
+    const id = account._id;
+    dispatch(withdraw({ id, amount: parseFloat(account.amount) - parseFloat(amount) }));
     } else {
       setErrorDeposit(true);
     }
   };
 
+
+
+  
   const depositHandler = () => {
     const id = account._id;
-    // dispatch(balance({ id, amount }));
     dispatch(deposit({ id, amount: parseFloat(amount) + parseFloat(account.amount)}));
   };
 
