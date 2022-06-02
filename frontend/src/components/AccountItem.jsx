@@ -9,17 +9,6 @@ function AccountItem({ account }) {
   const [amount, setAmount] = useState("");
   const [errorDeposit, setErrorDeposit] = useState("");
 
-  // const withdrawHandler = () => {
-  //   if (amount < account.amount) {
-  //     const id = account._id;
-  //     const newAmount = -Math.abs(amount);
-  //     dispatch(withdraw({ id, newAmount }));
-  //     setErrorDeposit(false);
-  //   } else {
-  //     setErrorDeposit(true);
-  //   }
-  // };
-
   const withdrawHandler = () => {
     if (amount < account.amount){
     const id = account._id;
