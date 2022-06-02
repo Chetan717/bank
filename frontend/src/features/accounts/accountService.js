@@ -41,6 +41,8 @@ const deleteAccount = async (accountId, token) => {
   return response.data
 };
 
+//update
+
 // balance user account
 const balance = async (data, token) => {
   const config = {
@@ -49,7 +51,7 @@ const balance = async (data, token) => {
     },
   };
 
-  const response = await axios.post(API_URL+'balance/' + data.id,data, config);
+  const response = await axios.post(API_URL+'/:id' + data.id,data, config);
 
   return response.data;
 };
@@ -62,7 +64,7 @@ const deposit = async (data, token) => {
     },
   };
 
-  const response = await axios.post(API_URL+'deposit/' + data.id,data, config);
+  const response = await axios.put(API_URL+ data.id,data, config);
 
   return response.data;
 };
@@ -75,7 +77,7 @@ const withdraw = async (data, token) => {
     },
   };
 
-  const response = await axios.post(API_URL+'withdraw/' + data.id,data, config);
+  const response = await axios.post(API_URL+'withdraw/:id' + data.id,data, config);
 
   return response.data;
 };

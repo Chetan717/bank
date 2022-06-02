@@ -173,6 +173,22 @@ export const accountSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
+      })
+      .addCase(deposit.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deposit.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        // state.accounts = state.accounts.filter(
+        //   (account) => account._id !== action.payload.id
+        // );
+        state.message=action.payload;
+      })
+      .addCase(deposit.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
       });
   },
 });

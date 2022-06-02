@@ -23,7 +23,7 @@ function AccountItem({ account }) {
   const depositHandler = () => {
     const id = account._id;
     // dispatch(balance({ id, amount }));
-    dispatch(deposit({ id, amount }));
+    dispatch(deposit({ id, amount: parseFloat(amount) + parseFloat(account.amount)}));
   };
 
   return (

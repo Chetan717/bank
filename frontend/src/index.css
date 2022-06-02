@@ -147,10 +147,12 @@ margin-bottom: 10px;
   background-color: #AD6588;
   color: #fff;
   border-radius: 20px;
-  transition: all ease;
+  transition: all ease 0.5s;
 }
 .balance-btn-1:hover {
   transform: scale(0.98);
+  background-color: #974e72;
+  
 }
 
 .balance-btn-2 {
@@ -160,8 +162,13 @@ margin-bottom: 10px;
   background-color: #6595ad;
   color: #fff;
   border-radius: 20px;
-  transition: all ease;
+  transition: all ease 0.5s;
 
+}
+.balance-btn-2:hover {
+  transform: scale(0.98);
+  background-color: #446f85;
+  
 }
 
 .balance-btn-2:hover {
@@ -215,18 +222,29 @@ margin-bottom: 10px;
   font-size: 16px;
   font-weight: 300;
   cursor: pointer;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.6rem;
   text-align: center;
   appearance: button;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all ease 0.5s;
+}
+.btn:hover {
+  transform: scale(0.98);
+  background: #528e93;
+  letter-spacing: 0.55rem;
 }
 
 .logout-btn {
   padding: 10px 30px;
   background-color: #AD6588;
   border: none;
+}
+.logout-btn:hover {
+  
+  background-color: #93496d;
+  
 }
 .btn svg {
   margin-right: 8px;
@@ -242,9 +260,7 @@ margin-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.btn:hover {
-  transform: scale(0.98);
-}
+
 
 .loadingSpinnerContainer {
   position: fixed;
